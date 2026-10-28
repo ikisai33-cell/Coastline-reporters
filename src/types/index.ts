@@ -16,6 +16,24 @@ export type UserRoleType =
   | 'reporter'
   | 'multimedia_producer';
 
+export type NigerDeltaState =
+  | 'bayelsa'
+  | 'rivers'
+  | 'delta'
+  | 'akwa-ibom'
+  | 'cross-river'
+  | 'edo'
+  | 'ondo'
+  | 'abia'
+  | 'imo';
+
+export interface NigerDeltaStateConfig {
+  id: NigerDeltaState;
+  name: string;
+  capital: string;
+  code: string;
+}
+
 export interface Profile {
   id: string;
   email: string;
@@ -49,9 +67,16 @@ export interface Tag {
   slug: string;
 }
 
+export interface ArticleSourceReference {
+  title: string;
+  url?: string;
+  publisher?: string;
+}
+
 export interface Article {
   id: string;
   title: string;
+  subheadline?: string | null;
   slug: string;
   excerpt: string;
   content: string;
@@ -63,14 +88,18 @@ export interface Article {
   is_breaking: boolean;
   is_featured: boolean;
   is_editor_pick: boolean;
+  state?: NigerDeltaState | null;
   featured_image_url?: string | null;
   featured_image_caption?: string | null;
+  featured_image_credit?: string | null;
   read_time_minutes?: number;
   published_at?: string | null;
   created_at: string;
   updated_at: string;
   tags?: Tag[];
-  is_specimen?: boolean; // Transparency flag for Phase 1 prototype specimens
+  sources?: ArticleSourceReference[];
+  correction_notice?: string | null;
+  is_specimen?: boolean; // Transparency flag for Phase 2 prototype specimens
 }
 
 export interface ArticleRevision {
@@ -121,9 +150,20 @@ export interface AuditLog {
 
 export interface BreakingAlert {
   id: string;
+  article_id: string;
   headline: string;
   href: string;
   category: string;
   timestamp: string;
+  published_at: string;
   isLive?: boolean;
+}
+
+export interface PaginatedResult<T> {
+  data: T[];
+  total: number;
+  page: number;
+  pageSize: number;
+  totalPages: number;
+  hasMore: boolean;
 }

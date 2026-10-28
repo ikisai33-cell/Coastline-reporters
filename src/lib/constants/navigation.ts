@@ -93,6 +93,7 @@ export const INSTITUTIONAL_LINKS = [
   { name: 'Editorial Policy', href: '/editorial-policy' },
   { name: 'Corrections Policy', href: '/corrections-policy' },
   { name: 'Privacy Policy', href: '/privacy-policy' },
+  { name: 'Terms of Use', href: '/terms-of-use' },
 ];
 
 export const NEWSROOM_ROLES = [
