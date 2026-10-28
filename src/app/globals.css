@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-navy-950: #040914;
+  --color-brand-navy-900: #0a192f;
+  --color-brand-navy-850: #0d203d;
+  --color-brand-navy-800: #112a4c;
+  --color-brand-navy-700: #1b3a63;
+  --color-brand-navy-600: #244b7d;
+  --color-brand-teal-900: #02383f;
+  --color-brand-teal-800: #025660;
+  --color-brand-teal-700: #028090;
+  --color-brand-teal-600: #009886;
+  --color-brand-teal-500: #00a896;
+  --color-brand-teal-400: #20c9b4;
+  --color-brand-teal-100: #e6f8f6;
+  --color-brand-teal-50: #f2fbfb;
+  --color-brand-gold-500: #f59e0b;
+  --color-brand-red-600: #d90429;
+  --color-brand-red-700: #b00320;
+  --color-paper-light: #f8fafc;
+  --color-paper-card: #ffffff;
+  --color-paper-border: #e2e8f0;
+  --color-paper-text-muted: #64748b;
+  --color-paper-text-dark: #0f172a;
+}
+
+:root {
+  --background: #f8fafc;
+  --foreground: #0f172a;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* BBC-inspired news grid & typography flourishes */
+.editorial-headline {
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+}
+
+.editorial-kicker {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.news-divider {
+  border-bottom: 1px solid #e2e8f0;
+}
